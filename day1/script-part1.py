@@ -11,22 +11,15 @@ for line in lines:
     leftList.append(splitVal[0])
     rightList.append(splitVal[1])
 
-x = 0
+#sort lists
+leftList.sort()
+rightList.sort()
 
 #iterate through lists
+x = 0
 while x < len(lines):
+	solution = solution + abs(int(leftList[x]) - int(rightList[x]))
 	x += 1
-
-	stringValue1 = min(leftList)
-	stringValue2 = min(rightList)
-
-	value1 = int(stringValue1)
-	value2 = int(stringValue2)
-
-	leftList.remove(stringValue1)
-	rightList.remove(stringValue2)
-
-	solution = solution + abs(value1 - value2)
 
 #return solution
 print(solution)

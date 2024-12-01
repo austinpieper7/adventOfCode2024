@@ -12,9 +12,20 @@ for line in lines:
     leftList.append(splitVal[0])
     rightList.append(splitVal[1].strip())
 
+#sort lists
+leftList.sort()
+rightList.sort()
+
+#initialize dictionary
+mydict = {}
+
 #iterate through list
 for i in leftList:
-	solution = solution + int(i) * rightList.count(i)
-
+    if i in mydict:
+        solution = solution + int(i) * mydict[i]
+    else:
+        mydict[i] = rightList.count(i)
+        solution = solution + int(i) * mydict[i]
+    
 #return solution
 print(solution)
