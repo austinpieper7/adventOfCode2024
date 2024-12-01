@@ -1,4 +1,3 @@
-from collections import Counter
 solution = 0
 #open file
 with open(r'day1\input.txt', 'r') as entries:
